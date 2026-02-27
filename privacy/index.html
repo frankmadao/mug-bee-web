@@ -24,7 +24,6 @@
       box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
     }
 
-    /* Top bar */
     .topbar {
       display: flex;
       align-items: center;
@@ -35,23 +34,10 @@
       gap: 0.75rem;
     }
 
-    .topbar-left {
-      font-size: 0.85rem;
-      color: #888;
-    }
-
-    .topbar-left a {
-      color: #888;
-      text-decoration: none;
-    }
-
+    .topbar-left { font-size: 0.85rem; color: #888; }
+    .topbar-left a { color: #888; text-decoration: none; }
     .topbar-left a:hover { color: #007aff; }
-
-    .topbar-right {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
+    .topbar-right { display: flex; gap: 0.5rem; align-items: center; }
 
     .btn {
       display: inline-flex;
@@ -72,25 +58,14 @@
 
     .btn:hover { background: #f5f5f5; border-color: #bbb; }
 
-    .btn-primary {
-      background: #007aff;
-      border-color: #007aff;
-      color: #fff;
-    }
-
+    .btn-primary { background: #007aff; border-color: #007aff; color: #fff; }
     .btn-primary:hover { background: #0066d6; border-color: #0066d6; }
 
-    /* Document */
     header { margin-bottom: 2rem; }
     header h1 { font-size: 1.9rem; font-weight: 700; margin-bottom: 0.3rem; }
     header .meta { color: #888; font-size: 0.875rem; }
 
-    h2 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin: 2rem 0 0.5rem;
-      color: #111;
-    }
+    h2 { font-size: 1.05rem; font-weight: 600; margin: 2rem 0 0.5rem; color: #111; }
 
     p { margin-bottom: 0.75rem; color: #333; }
 
@@ -116,7 +91,6 @@
     footer a { color: #aaa; }
     footer a:hover { color: #007aff; }
 
-    /* Print */
     @media print {
       body { background: #fff; }
       .page { box-shadow: none; padding: 0; }
@@ -130,10 +104,8 @@
 </head>
 <body>
   <div class="page">
-    <div class="topbar no-print">
-      <div class="topbar-left">
-        <a href="/">MugBee</a>
-      </div>
+    <div class="topbar">
+      <div class="topbar-left"><a href="/">MugBee</a></div>
       <div class="topbar-right">
         <button class="btn" id="langToggle" onclick="toggleLang()">中文</button>
         <button class="btn btn-primary" onclick="window.print()">↓ PDF</button>
@@ -163,23 +135,38 @@
       <p>All data is stored <strong>locally on your device</strong> using Apple's SwiftData framework.</p>
       <p>If you enable iCloud Sync in Settings, your data (including photos) is additionally stored in your personal iCloud account via Apple's CloudKit service. This sync is entirely under your Apple ID and governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. We never have access to your iCloud data.</p>
 
-      <h2>3. Data Sharing</h2>
+      <h2>3. Data Security</h2>
+      <p>Your data is protected by iOS device encryption (hardware-level AES encryption enforced by the Secure Enclave). When iCloud Sync is enabled, data in transit and at rest is encrypted end-to-end by Apple's CloudKit infrastructure. We do not operate any servers that store your data, so there is no central database that could be breached.</p>
+
+      <h2>4. Data Sharing</h2>
       <p>We do not share, sell, or transmit your data to any third party. MugBee contains no third-party SDKs, no advertising networks, and no analytics services.</p>
 
-      <h2>4. Camera and Photo Library Access</h2>
+      <h2>5. Camera and Photo Library Access</h2>
       <p>MugBee requests access to your camera and photo library solely to let you photograph and import images of your ceramic pieces. Photos are stored only on your device (and optionally in your iCloud account if sync is enabled). We do not upload photos to any external server.</p>
 
-      <h2>5. Deleting Your Data</h2>
+      <h2>6. Deleting Your Data</h2>
       <p>You can delete individual items, activities, or groups directly within the app. To remove all data, go to <strong>Settings → Delete All Data</strong>. If iCloud Sync is enabled, deleting data in the app will also remove it from CloudKit.</p>
       <p>Uninstalling the app removes all local data from your device. iCloud data can be managed separately through iOS Settings → [Your Name] → iCloud.</p>
 
-      <h2>6. Children's Privacy</h2>
+      <h2>7. Your Rights (EEA &amp; UK Users)</h2>
+      <p>If you are located in the European Economic Area (EEA) or the United Kingdom, you have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Right of access</strong> — request a copy of the data we hold about you.</li>
+        <li><strong>Right to rectification</strong> — ask us to correct inaccurate data.</li>
+        <li><strong>Right to erasure</strong> — request deletion of your data (see Section 6).</li>
+        <li><strong>Right to data portability</strong> — export your data directly from the app.</li>
+        <li><strong>Right to restriction</strong> — ask us to limit how we process your data.</li>
+        <li><strong>Right to object</strong> — object to processing of your data.</li>
+      </ul>
+      <p>Since all data is stored locally on your device or in your personal iCloud account, you have direct control over your data at all times. To exercise any of these rights, contact us at <a href="mailto:yuanwen_tian@qq.com">yuanwen_tian@qq.com</a>.</p>
+
+      <h2>8. Children's Privacy</h2>
       <p>MugBee does not knowingly collect data from children under 13. The app is rated 4+ and contains no features directed at children.</p>
 
-      <h2>7. Changes to This Policy</h2>
+      <h2>9. Changes to This Policy</h2>
       <p>If we make material changes to this policy, we will update the "Last updated" date above. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
 
-      <h2>8. Contact</h2>
+      <h2>10. Contact</h2>
       <p>If you have questions about this policy, please contact us at <a href="mailto:yuanwen_tian@qq.com">yuanwen_tian@qq.com</a>.</p>
 
       <footer>
@@ -211,23 +198,38 @@
       <p>所有数据均使用 Apple 的 SwiftData 框架<strong>本地存储在您的设备上</strong>。</p>
       <p>如果您在设置中启用 iCloud 同步，您的数据（包括照片）将通过 Apple 的 CloudKit 服务额外存储在您的个人 iCloud 账户中。此同步完全在您的 Apple ID 下进行，受 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 隐私政策</a>约束。我们无法访问您的 iCloud 数据。</p>
 
-      <h2>3. 数据共享</h2>
+      <h2>3. 数据安全</h2>
+      <p>您的数据受 iOS 设备加密保护（由安全隔区强制执行的硬件级 AES 加密）。启用 iCloud 同步后，传输中和静态数据均由 Apple 的 CloudKit 基础设施进行端对端加密。我们不运营任何存储您数据的服务器，因此不存在可能被入侵的中央数据库。</p>
+
+      <h2>4. 数据共享</h2>
       <p>我们不与任何第三方共享、出售或传输您的数据。MugBee 不包含任何第三方 SDK、广告网络或分析服务。</p>
 
-      <h2>4. 相机和相册访问权限</h2>
+      <h2>5. 相机和相册访问权限</h2>
       <p>MugBee 请求访问您的相机和相册，仅用于让您拍摄和导入陶瓷器物的图片。照片仅存储在您的设备上（如果启用了同步，也可选择存储在您的 iCloud 账户中）。我们不会将照片上传到任何外部服务器。</p>
 
-      <h2>5. 删除您的数据</h2>
+      <h2>6. 删除您的数据</h2>
       <p>您可以直接在应用内删除单个器物、活动或分组。如需删除所有数据，请前往<strong>设置 → 删除所有数据</strong>。如果启用了 iCloud 同步，在应用内删除数据也会将其从 CloudKit 中删除。</p>
       <p>卸载应用将从您的设备中删除所有本地数据。iCloud 数据可通过 iOS 设置 → [您的姓名] → iCloud 单独管理。</p>
 
-      <h2>6. 儿童隐私</h2>
+      <h2>7. 您的权利（欧洲经济区及英国用户）</h2>
+      <p>如果您位于欧洲经济区（EEA）或英国，您对您的个人数据享有以下权利：</p>
+      <ul>
+        <li><strong>访问权</strong> — 请求获取我们持有的关于您的数据副本。</li>
+        <li><strong>更正权</strong> — 要求我们更正不准确的数据。</li>
+        <li><strong>删除权</strong> — 请求删除您的数据（见第6条）。</li>
+        <li><strong>数据可携带权</strong> — 直接从应用内导出您的数据。</li>
+        <li><strong>限制权</strong> — 要求我们限制对您数据的处理方式。</li>
+        <li><strong>反对权</strong> — 反对对您数据的处理。</li>
+      </ul>
+      <p>由于所有数据均本地存储在您的设备上或您的个人 iCloud 账户中，您始终对自己的数据拥有直接控制权。如需行使上述权利，请通过 <a href="mailto:yuanwen_tian@qq.com">yuanwen_tian@qq.com</a> 联系我们。</p>
+
+      <h2>8. 儿童隐私</h2>
       <p>MugBee 不会故意收集 13 岁以下儿童的数据。本应用评级为 4+，不包含任何面向儿童的功能。</p>
 
-      <h2>7. 政策变更</h2>
+      <h2>9. 政策变更</h2>
       <p>如果我们对本政策进行重大变更，我们将更新上方的"最后更新"日期。变更后继续使用本应用即表示接受更新后的政策。</p>
 
-      <h2>8. 联系方式</h2>
+      <h2>10. 联系方式</h2>
       <p>如果您对本政策有疑问，请通过 <a href="mailto:yuanwen_tian@qq.com">yuanwen_tian@qq.com</a> 联系我们。</p>
 
       <footer>
