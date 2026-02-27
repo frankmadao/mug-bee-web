@@ -55,6 +55,20 @@
 
     .lang-section { display: none; }
     .lang-section.active { display: block; }
+
+    .lang-toggle {
+      margin-top: 1.5rem;
+      background: none;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      color: #aaa;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .lang-toggle:hover { border-color: #bbb; color: #555; }
   </style>
 </head>
 <body>
@@ -90,13 +104,27 @@
         </a>
       </div>
     </div>
+
+    <button class="lang-toggle" id="langToggle" onclick="toggleLang()">中文</button>
   </div>
 
   <script>
-    var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    lang = lang.startsWith('zh') ? 'zh' : 'en';
-    document.getElementById(lang).classList.add('active');
-    document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+    var currentLang = 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.getElementById('en').classList.toggle('active', lang === 'en');
+      document.getElementById('zh').classList.toggle('active', lang === 'zh');
+      document.getElementById('langToggle').textContent = lang === 'en' ? '中文' : 'English';
+      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+    }
+
+    function toggleLang() {
+      setLang(currentLang === 'en' ? 'zh' : 'en');
+    }
+
+    var detected = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    setLang(detected.startsWith('zh') ? 'zh' : 'en');
   </script>
 </body>
 </html>
