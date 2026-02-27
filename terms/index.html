@@ -6,79 +6,254 @@
   <title>Terms of Use – MugBee</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", Roboto, sans-serif;
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.75;
       color: #1a1a1a;
-      background: #fff;
-      padding: 2rem 1rem 4rem;
-      max-width: 720px;
-      margin: 0 auto;
+      background: #f9f9f7;
     }
-    header { margin-bottom: 2.5rem; }
-    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem; }
-    header p { color: #666; font-size: 0.9rem; }
-    h2 { font-size: 1.15rem; font-weight: 600; margin: 2rem 0 0.5rem; }
-    p { margin-bottom: 0.75rem; }
+
+    .page {
+      max-width: 740px;
+      margin: 0 auto;
+      background: #fff;
+      min-height: 100vh;
+      padding: 0 2rem 4rem;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid #ebebeb;
+      margin-bottom: 2.5rem;
+      gap: 0.75rem;
+    }
+
+    .topbar-left { font-size: 0.85rem; color: #888; }
+    .topbar-left a { color: #888; text-decoration: none; }
+    .topbar-left a:hover { color: #007aff; }
+
+    .topbar-right { display: flex; gap: 0.5rem; align-items: center; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid #d5d5d5;
+      background: #fff;
+      color: #333;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn:hover { background: #f5f5f5; border-color: #bbb; }
+
+    .btn-primary {
+      background: #007aff;
+      border-color: #007aff;
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: #0066d6; border-color: #0066d6; }
+
+    header { margin-bottom: 2rem; }
+    header h1 { font-size: 1.9rem; font-weight: 700; margin-bottom: 0.3rem; }
+    header .meta { color: #888; font-size: 0.875rem; }
+
+    h2 { font-size: 1.05rem; font-weight: 600; margin: 2rem 0 0.5rem; color: #111; }
+
+    p { margin-bottom: 0.75rem; color: #333; }
+
     ul { margin: 0.5rem 0 0.75rem 1.5rem; }
-    li { margin-bottom: 0.25rem; }
+    li { margin-bottom: 0.3rem; color: #333; }
+
     a { color: #007aff; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e5e5e5; font-size: 0.85rem; color: #888; }
+
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid #ebebeb;
+      font-size: 0.85rem;
+      color: #aaa;
+      display: flex;
+      gap: 1rem;
+    }
+
+    footer a { color: #aaa; }
+    footer a:hover { color: #007aff; }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; padding: 0; }
+      .topbar { display: none; }
+      .lang-section { display: none !important; }
+      .lang-section.active { display: block !important; }
+      a { color: #000; }
+      h2 { page-break-after: avoid; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Terms of Use</h1>
-    <p>MugBee &nbsp;·&nbsp; Last updated: February 27, 2026</p>
-  </header>
+  <div class="page">
+    <div class="topbar">
+      <div class="topbar-left">
+        <a href="/">MugBee</a>
+      </div>
+      <div class="topbar-right">
+        <button class="btn" id="langToggle" onclick="toggleLang()">中文</button>
+        <button class="btn btn-primary" onclick="window.print()">↓ PDF</button>
+      </div>
+    </div>
 
-  <p>By downloading or using MugBee ("the app"), you agree to these Terms of Use. If you do not agree, do not use the app.</p>
+    <!-- English -->
+    <div class="lang-section" id="en">
+      <header>
+        <h1>Terms of Use</h1>
+        <p class="meta">MugBee &nbsp;·&nbsp; Last updated: February 27, 2026</p>
+      </header>
 
-  <h2>1. Description of Service</h2>
-  <p>MugBee is a personal journaling app for tracking ceramic tea-ware and coffee-ware collections and brewing activities. All core features are available on-device. Optional Premium features may be available via in-app subscription.</p>
+      <p>By downloading or using MugBee ("the app"), you agree to these Terms of Use. If you do not agree, do not use the app.</p>
 
-  <h2>2. Eligibility</h2>
-  <p>You must be at least 13 years old to use MugBee. By using the app, you confirm that you meet this requirement.</p>
+      <h2>1. Description of Service</h2>
+      <p>MugBee is a personal journaling app for tracking ceramic tea-ware and coffee-ware collections and brewing activities. All core features are available on-device. Optional Premium features may be available via in-app subscription.</p>
 
-  <h2>3. In-App Purchases and Subscriptions</h2>
-  <p>MugBee may offer optional Premium subscriptions through Apple's in-app purchase system. The following terms apply:</p>
-  <ul>
-    <li><strong>Billing.</strong> Payment is charged to your Apple ID account upon confirmation of purchase.</li>
-    <li><strong>Automatic renewal.</strong> Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current billing period.</li>
-    <li><strong>Renewal charge.</strong> Your account is charged for renewal within 24 hours prior to the end of the current period at the same price.</li>
-    <li><strong>Free trials.</strong> If a free trial is offered, unused portions are forfeited when you purchase a subscription.</li>
-    <li><strong>Managing subscriptions.</strong> You can manage or cancel your subscription at any time by going to iOS Settings → [Your Name] → Subscriptions.</li>
-    <li><strong>Refunds.</strong> All refund requests are handled by Apple. Contact Apple Support at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</li>
-  </ul>
+      <h2>2. Eligibility</h2>
+      <p>You must be at least 13 years old to use MugBee. By using the app, you confirm that you meet this requirement.</p>
 
-  <h2>4. User Content</h2>
-  <p>You retain ownership of all photos, notes, and data you enter into MugBee. By using the app you confirm that you have the rights to any content you add. We do not access, use, or transmit your content to any server.</p>
+      <h2>3. In-App Purchases and Subscriptions</h2>
+      <p>MugBee may offer optional Premium subscriptions through Apple's in-app purchase system. The following terms apply:</p>
+      <ul>
+        <li><strong>Billing.</strong> Payment is charged to your Apple ID account upon confirmation of purchase.</li>
+        <li><strong>Automatic renewal.</strong> Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current billing period.</li>
+        <li><strong>Renewal charge.</strong> Your account is charged for renewal within 24 hours prior to the end of the current period at the same price.</li>
+        <li><strong>Free trials.</strong> If a free trial is offered, unused portions are forfeited when you purchase a subscription.</li>
+        <li><strong>Managing subscriptions.</strong> You can manage or cancel your subscription at any time by going to iOS Settings → [Your Name] → Subscriptions.</li>
+        <li><strong>Refunds.</strong> All refund requests are handled by Apple. Contact Apple Support at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</li>
+      </ul>
 
-  <h2>5. Acceptable Use</h2>
-  <p>You agree not to use MugBee in any unlawful manner or in a way that could harm others. The app is intended for personal, non-commercial use.</p>
+      <h2>4. User Content</h2>
+      <p>You retain ownership of all photos, notes, and data you enter into MugBee. By using the app you confirm that you have the rights to any content you add. We do not access, use, or transmit your content to any server.</p>
 
-  <h2>6. Intellectual Property</h2>
-  <p>All app content (design, code, graphics, copy) is owned by MugBee's developer and protected by applicable intellectual property law. You may not copy, modify, or distribute the app or its content without permission.</p>
+      <h2>5. Acceptable Use</h2>
+      <p>You agree not to use MugBee in any unlawful manner or in a way that could harm others. The app is intended for personal, non-commercial use.</p>
 
-  <h2>7. Disclaimer of Warranties</h2>
-  <p>MugBee is provided "as is" without warranties of any kind. We do not guarantee that the app will be error-free or uninterrupted.</p>
+      <h2>6. Intellectual Property</h2>
+      <p>All app content (design, code, graphics, copy) is owned by MugBee's developer and protected by applicable intellectual property law. You may not copy, modify, or distribute the app or its content without permission.</p>
 
-  <h2>8. Limitation of Liability</h2>
-  <p>To the fullest extent permitted by law, we are not liable for any indirect, incidental, or consequential damages arising from your use of the app, including loss of data.</p>
+      <h2>7. Disclaimer of Warranties</h2>
+      <p>MugBee is provided "as is" without warranties of any kind. We do not guarantee that the app will be error-free or uninterrupted.</p>
 
-  <h2>9. Changes to These Terms</h2>
-  <p>We may update these terms from time to time. Material changes will be reflected in the "Last updated" date. Continued use of the app constitutes acceptance.</p>
+      <h2>8. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, we are not liable for any indirect, incidental, or consequential damages arising from your use of the app, including loss of data.</p>
 
-  <h2>10. Governing Law</h2>
-  <p>These terms are governed by the laws of the jurisdiction in which the developer resides, without regard to conflict of law provisions.</p>
+      <h2>9. Changes to These Terms</h2>
+      <p>We may update these terms from time to time. Material changes will be reflected in the "Last updated" date. Continued use of the app constitutes acceptance.</p>
 
-  <h2>11. Contact</h2>
-  <p>Questions about these terms: <a href="mailto:support@mugbee.app">support@mugbee.app</a></p>
+      <h2>10. Governing Law</h2>
+      <p>These terms are governed by the laws of the jurisdiction in which the developer resides, without regard to conflict of law provisions.</p>
 
-  <footer>
-    <p>MugBee &nbsp;·&nbsp; <a href="/privacy">Privacy Policy</a></p>
-  </footer>
+      <h2>11. Contact</h2>
+      <p>Questions about these terms: <a href="mailto:support@mugbee.app">support@mugbee.app</a></p>
+
+      <footer>
+        <a href="/">MugBee</a>
+        <a href="/privacy">Privacy Policy</a>
+      </footer>
+    </div>
+
+    <!-- Chinese -->
+    <div class="lang-section" id="zh">
+      <header>
+        <h1>使用条款</h1>
+        <p class="meta">MugBee &nbsp;·&nbsp; 最后更新：2026年2月27日</p>
+      </header>
+
+      <p>下载或使用 MugBee（"本应用"）即表示您同意这些使用条款。如果您不同意，请勿使用本应用。</p>
+
+      <h2>1. 服务描述</h2>
+      <p>MugBee 是一款用于追踪陶瓷茶器和咖啡器收藏及冲泡活动的个人日志应用。所有核心功能均在设备端可用。部分高级功能可通过应用内订阅使用。</p>
+
+      <h2>2. 使用资格</h2>
+      <p>您须年满 13 周岁方可使用 MugBee。使用本应用即表示您确认满足此要求。</p>
+
+      <h2>3. 应用内购买和订阅</h2>
+      <p>MugBee 可通过 Apple 的应用内购买系统提供可选的高级订阅。以下条款适用：</p>
+      <ul>
+        <li><strong>付款。</strong>购买确认后，费用从您的 Apple ID 账户扣除。</li>
+        <li><strong>自动续费。</strong>订阅将自动续费，除非在当前计费周期结束前至少 24 小时取消。</li>
+        <li><strong>续费扣款。</strong>续费费用将在当前周期结束前 24 小时内以相同价格从您的账户扣除。</li>
+        <li><strong>免费试用。</strong>如果提供免费试用，购买订阅后未使用的试用期将被取消。</li>
+        <li><strong>管理订阅。</strong>您可以随时通过 iOS 设置 → [您的姓名] → 订阅 来管理或取消订阅。</li>
+        <li><strong>退款。</strong>所有退款请求均由 Apple 处理。请通过 <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> 联系 Apple 支持。</li>
+      </ul>
+
+      <h2>4. 用户内容</h2>
+      <p>您保留在 MugBee 中输入的所有照片、笔记和数据的所有权。使用本应用即表示您确认拥有所添加内容的权利。我们不访问、使用或传输您的内容到任何服务器。</p>
+
+      <h2>5. 可接受使用</h2>
+      <p>您同意不以任何违法方式或可能伤害他人的方式使用 MugBee。本应用仅供个人非商业用途使用。</p>
+
+      <h2>6. 知识产权</h2>
+      <p>所有应用内容（设计、代码、图形、文案）均归 MugBee 开发者所有，受适用知识产权法保护。未经许可，您不得复制、修改或分发本应用或其内容。</p>
+
+      <h2>7. 免责声明</h2>
+      <p>MugBee 按"现状"提供，不附带任何形式的保证。我们不保证本应用不会出现错误或不会中断。</p>
+
+      <h2>8. 责任限制</h2>
+      <p>在法律允许的最大范围内，我们不对因您使用本应用而产生的任何间接、附带或后果性损害承担责任，包括数据丢失。</p>
+
+      <h2>9. 条款变更</h2>
+      <p>我们可能会不时更新这些条款。重大变更将体现在"最后更新"日期中。继续使用本应用即表示接受变更。</p>
+
+      <h2>10. 适用法律</h2>
+      <p>本条款受开发者所在司法管辖区的法律管辖，不考虑法律冲突条款。</p>
+
+      <h2>11. 联系方式</h2>
+      <p>有关这些条款的问题：<a href="mailto:support@mugbee.app">support@mugbee.app</a></p>
+
+      <footer>
+        <a href="/">MugBee</a>
+        <a href="/privacy">隐私政策</a>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    var currentLang = 'en';
+
+    function detectLang() {
+      var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      return lang.startsWith('zh') ? 'zh' : 'en';
+    }
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.getElementById('en').classList.toggle('active', lang === 'en');
+      document.getElementById('zh').classList.toggle('active', lang === 'zh');
+      document.getElementById('langToggle').textContent = lang === 'en' ? '中文' : 'English';
+      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+    }
+
+    function toggleLang() {
+      setLang(currentLang === 'en' ? 'zh' : 'en');
+    }
+
+    setLang(detectLang());
+  </script>
 </body>
 </html>
