@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical Support – MugBee</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: #1a1a1a;
+      background: #f9f9f7;
+    }
+
+    .page {
+      max-width: 740px;
+      margin: 0 auto;
+      background: #fff;
+      min-height: 100vh;
+      padding: 0 2rem 4rem;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid #ebebeb;
+      margin-bottom: 2.5rem;
+      gap: 0.75rem;
+    }
+
+    .topbar-left { font-size: 0.85rem; color: #888; }
+    .topbar-left a { color: #888; text-decoration: none; }
+    .topbar-left a:hover { color: #007aff; }
+    .topbar-right { display: flex; gap: 0.5rem; align-items: center; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid #d5d5d5;
+      background: #fff;
+      color: #333;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn:hover { background: #f5f5f5; border-color: #bbb; }
+
+    header { margin-bottom: 2rem; }
+    header h1 { font-size: 1.9rem; font-weight: 700; margin-bottom: 0.3rem; }
+    header .meta { color: #888; font-size: 0.875rem; }
+
+    h2 { font-size: 1.05rem; font-weight: 600; margin: 2rem 0 0.5rem; color: #111; }
+
+    p { margin-bottom: 0.75rem; color: #333; }
+
+    ul { margin: 0.5rem 0 0.75rem 1.5rem; }
+    li { margin-bottom: 0.3rem; color: #333; }
+
+    a { color: #007aff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .contact-box {
+      margin: 1.5rem 0;
+      padding: 1.25rem 1.5rem;
+      background: #f5f7fa;
+      border-radius: 10px;
+      border: 1px solid #e8ecf0;
+    }
+
+    .contact-box p { margin-bottom: 0.4rem; }
+    .contact-box p:last-child { margin-bottom: 0; }
+
+    .faq-item { margin-bottom: 1.5rem; }
+    .faq-item h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 0.3rem;
+    }
+    .faq-item p { margin-bottom: 0.4rem; }
+
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid #ebebeb;
+      font-size: 0.85rem;
+      color: #aaa;
+      display: flex;
+      gap: 1rem;
+    }
+
+    footer a { color: #aaa; }
+    footer a:hover { color: #007aff; }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; padding: 0; }
+      .topbar { display: none; }
+      .lang-section { display: none !important; }
+      .lang-section.active { display: block !important; }
+      a { color: #000; }
+      h2 { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div class="topbar-left"><a href="/">MugBee</a></div>
+      <div class="topbar-right">
+        <button class="btn" id="langToggle" onclick="toggleLang()">中文</button>
+      </div>
+    </div>
+
+    <!-- English -->
+    <div class="lang-section" id="en">
+      <header>
+        <h1>Technical Support</h1>
+        <p class="meta">MugBee &nbsp;·&nbsp; Ceramic & tea-ware ritual journal</p>
+      </header>
+
+      <p>Thank you for using MugBee! If you encounter any issues or have questions, we're here to help.</p>
+
+      <div class="contact-box">
+        <p><strong>Support Email</strong></p>
+        <p><a href="mailto:yuanwen_tian@qq.com">yuanwen_tian@qq.com</a></p>
+        <p style="color: #888; font-size: 0.875rem;">We typically respond within 1–2 business days.</p>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>Where is my data stored?</h3>
+        <p>All data is stored locally on your device. If you enable iCloud Sync in Settings, your data is also synced to your personal iCloud account via Apple's CloudKit.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I enable or disable iCloud Sync?</h3>
+        <p>Go to <strong>Settings</strong> within the app to toggle iCloud Sync on or off.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>I lost my data after reinstalling the app. Can I recover it?</h3>
+        <p>If you had iCloud Sync enabled before reinstalling, your data should automatically restore after signing in with the same Apple ID and enabling iCloud Sync again. If sync was not enabled, local data is removed when the app is uninstalled.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I delete all my data?</h3>
+        <p>Go to <strong>Settings → Delete All Data</strong> within the app. If iCloud Sync is enabled, this will also remove data from your iCloud account.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>The app is crashing or not responding. What should I do?</h3>
+        <p>Try the following steps:</p>
+        <ul>
+          <li>Make sure you are running the latest version of MugBee from the App Store.</li>
+          <li>Restart the app by swiping it away and reopening it.</li>
+          <li>Restart your device.</li>
+          <li>If the issue persists, please contact us at <a href="mailto:yuanwen_tian@qq.com">yuanwen_tian@qq.com</a> with a description of the problem and your device model / iOS version.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I request a new feature?</h3>
+        <p>We'd love to hear your ideas! Send us an email at <a href="mailto:yuanwen_tian@qq.com">yuanwen_tian@qq.com</a> with your suggestion.</p>
+      </div>
+
+      <footer>
+        <a href="/">MugBee</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+      </footer>
+    </div>
+
+    <!-- Chinese -->
+    <div class="lang-section" id="zh">
+      <header>
+        <h1>技术支持</h1>
+        <p class="meta">杯蜜 &nbsp;·&nbsp; 陶瓷器物仪式感日志</p>
+      </header>
+
+      <p>感谢您使用杯蜜！如果您遇到任何问题或有疑问，我们随时为您提供帮助。</p>
+
+      <div class="contact-box">
+        <p><strong>技术支持邮箱</strong></p>
+        <p><a href="mailto:yuanwen_tian@qq.com">yuanwen_tian@qq.com</a></p>
+        <p style="color: #888; font-size: 0.875rem;">我们通常会在 1–2 个工作日内回复。</p>
+      </div>
+
+      <h2>常见问题</h2>
+
+      <div class="faq-item">
+        <h3>我的数据存储在哪里？</h3>
+        <p>所有数据均本地存储在您的设备上。如果您在设置中启用了 iCloud 同步，数据还会通过 Apple 的 CloudKit 同步到您的个人 iCloud 账户。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>如何开启或关闭 iCloud 同步？</h3>
+        <p>在应用内进入<strong>设置</strong>，即可开启或关闭 iCloud 同步。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>重新安装应用后数据丢失了，能恢复吗？</h3>
+        <p>如果您在重新安装前启用了 iCloud 同步，使用同一 Apple ID 登录并重新启用 iCloud 同步后，数据应会自动恢复。如果未启用同步，卸载应用时本地数据会被删除。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>如何删除所有数据？</h3>
+        <p>在应用内进入<strong>设置 → 删除所有数据</strong>。如果启用了 iCloud 同步，这也会从您的 iCloud 账户中删除数据。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>应用崩溃或无响应怎么办？</h3>
+        <p>请尝试以下步骤：</p>
+        <ul>
+          <li>确保您正在使用 App Store 上的最新版本。</li>
+          <li>上滑关闭应用后重新打开。</li>
+          <li>重启您的设备。</li>
+          <li>如果问题仍然存在，请通过 <a href="mailto:yuanwen_tian@qq.com">yuanwen_tian@qq.com</a> 联系我们，并附上问题描述、设备型号和 iOS 版本。</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>如何提交功能建议？</h3>
+        <p>我们非常欢迎您的建议！请发送邮件至 <a href="mailto:yuanwen_tian@qq.com">yuanwen_tian@qq.com</a>。</p>
+      </div>
+
+      <footer>
+        <a href="/">杯蜜</a>
+        <a href="/privacy">隐私政策</a>
+        <a href="/terms">使用条款</a>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    var currentLang = 'en';
+
+    function detectLang() {
+      var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      return lang.startsWith('zh') ? 'zh' : 'en';
+    }
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.getElementById('en').classList.toggle('active', lang === 'en');
+      document.getElementById('zh').classList.toggle('active', lang === 'zh');
+      document.getElementById('langToggle').textContent = lang === 'en' ? '中文' : 'English';
+      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+    }
+
+    function toggleLang() {
+      setLang(currentLang === 'en' ? 'zh' : 'en');
+    }
+
+    setLang(detectLang());
+  </script>
+</body>
+</html>
